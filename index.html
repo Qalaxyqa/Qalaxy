@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qalaxy — Automation QA School</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 50px;
+    font-size: 28px;
+}
+
+p {
+    color: #c9d1e6;
+    line-height: 1.6;
+}
+
+.btn {
+    background: #6c63ff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.card {
+    background: #141a2f;
+    padding: 18px;
+    margin-top: 12px;
+    border-radius: 12px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.tariff-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tariff-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8d86ff;
+    margin-bottom: 12px;
+}
+
+ul {
+    padding-left: 20px;
+    color: #c9d1e6;
+}
+
+form {
+    margin-top: 20px;
+    background: #141a2f;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #1c2440;
+    color: white;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px;
+    background: #6c63ff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+small {
+    color: #9aa7d1;
+    display: block;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Qalaxy</h1>
+<p>Automation QA School</p>
+
+<h2>Стань Automation QA з нуля за 3 місяці</h2>
+<p>Практика, реальні задачі, сильна база та підготовка до першої роботи в Automation QA.</p>
+
+<a href="#form" class="btn">Залишити заявку</a>
+
+<h2>Що ти отримаєш</h2>
+<div class="card">UI + API automation</div>
+<div class="card">Реальний проєкт для практики</div>
+<div class="card">Підготовка до співбесіди та роботи</div>
+
+<h2>Тарифи навчання</h2>
+<p>Обери формат, який підходить саме тобі.</p>
+
+<div class="cards">
+    <div class="card">
+        <div class="tariff-title">Base</div>
+        <div class="tariff-price">Самостійний формат</div>
+        <ul>
+            <li>доступ до матеріалів;</li>
+            <li>базова програма навчання;</li>
+            <li>навчання у власному темпі;</li>
+            <li>без перевірки домашніх завдань.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="tariff-title">Pro</div>
+        <div class="tariff-price">Фіксована оплата</div>
+        <ul>
+            <li>повна програма курсу;</li>
+            <li>домашні завдання;</li>
+            <li>перевірка та зворотний зв’язок;</li>
+            <li>чат підтримки;</li>
+            <li>підготовка до співбесіди.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="tariff-title">Career Start</div>
+        <div class="tariff-price">0 грн під час навчання</div>
+        <ul>
+            <li>ти нічого не платиш під час навчання;</li>
+            <li>оплата лише після отримання оферу;</li>
+            <li>якщо оферу немає — оплати немає;</li>
+            <li>після оферу — 20% від зарплати протягом 6 місяців;</li>
+            <li>максимальна підтримка та фокус на результат.</li>
+        </ul>
+        <small>
+            Умови цього тарифу варто окремо детально прописати в договорі:
+            що вважається офером, з якого моменту стартує оплата, від якої суми рахується 20% і як підтверджується працевлаштування.
+        </small>
+    </div>
+</div>
+
+<h2 id="form">Залишити заявку</h2>
+
+<form>
+    <input type="text" placeholder="Ім’я" required>
+    <input type="tel" placeholder="Телефон" required>
+    <input type="text" placeholder="Telegram">
+    <select>
+        <option>Оберіть тариф</option>
+        <option>Base</option>
+        <option>Pro</option>
+        <option>Career Start</option>
+    </select>
+    <button type="submit">Відправити заявку</button>
+</form>
+
+</div>
+
+</body>
+</html>
