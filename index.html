@@ -11,28 +11,22 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #07111f;
-      --bg-soft: #0c1729;
-      --card: rgba(15, 26, 46, 0.78);
-      --card-strong: rgba(18, 31, 54, 0.95);
-      --text: #f5f7ff;
-      --muted: #b5c1dd;
-      --muted-2: #92a0c2;
-      --line: rgba(255, 255, 255, 0.08);
-      --primary: #7b6cff;
-      --primary-2: #5cd0ff;
-      --success: #8cf3c9;
-      --warning: #ffd98a;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-      --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --radius-sm: 12px;
-      --max-width: 1180px;
+      --bg: #07101e;
+      --bg-2: #0c1832;
+      --panel: rgba(18, 30, 56, 0.78);
+      --text: #f6f8ff;
+      --muted: #b9c6e4;
+      --muted-2: #93a4c8;
+      --line: rgba(255,255,255,0.08);
+      --primary: #7c6cff;
+      --primary-2: #59d0ff;
+      --success: #9df1ca;
+      --shadow: 0 24px 70px rgba(0,0,0,0.35);
+      --max: 1200px;
     }
 
     * {
@@ -48,10 +42,10 @@
       color: var(--text);
       font-family: "Inter", sans-serif;
       background:
-        radial-gradient(circle at 10% 10%, rgba(123,108,255,0.22), transparent 30%),
-        radial-gradient(circle at 90% 15%, rgba(92,208,255,0.18), transparent 25%),
-        radial-gradient(circle at 80% 80%, rgba(123,108,255,0.14), transparent 28%),
-        linear-gradient(180deg, #06101d 0%, #081221 38%, #091426 100%);
+        radial-gradient(circle at 12% 8%, rgba(124,108,255,0.20), transparent 24%),
+        radial-gradient(circle at 88% 14%, rgba(89,208,255,0.15), transparent 20%),
+        radial-gradient(circle at 70% 82%, rgba(124,108,255,0.10), transparent 22%),
+        linear-gradient(180deg, #06101d 0%, #081323 45%, #091428 100%);
       min-height: 100vh;
     }
 
@@ -61,13 +55,20 @@
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     .container {
-      width: min(var(--max-width), calc(100% - 32px));
+      width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
     }
 
     .header {
@@ -75,8 +76,8 @@
       top: 0;
       z-index: 50;
       backdrop-filter: blur(16px);
-      background: rgba(6, 13, 24, 0.55);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(7, 14, 27, 0.56);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .header-inner {
@@ -92,9 +93,8 @@
       align-items: center;
       gap: 12px;
       font-family: "Manrope", sans-serif;
+      font-size: 26px;
       font-weight: 800;
-      font-size: 24px;
-      letter-spacing: 0.2px;
     }
 
     .logo-mark {
@@ -102,125 +102,93 @@
       height: 38px;
       border-radius: 50%;
       background:
-        radial-gradient(circle at 35% 35%, #9c90ff 0%, #7b6cff 38%, #5cd0ff 100%);
-      box-shadow:
-        0 0 30px rgba(123, 108, 255, 0.45),
-        inset 0 0 18px rgba(255,255,255,0.15);
+        radial-gradient(circle at 35% 35%, #b19dff 0%, #7c6cff 42%, #59d0ff 100%);
       position: relative;
       flex: 0 0 auto;
+      box-shadow: 0 0 28px rgba(124,108,255,0.38);
     }
 
     .logo-mark::after {
       content: "";
       position: absolute;
-      inset: -6px;
-      border: 1.5px solid rgba(146, 160, 194, 0.45);
+      inset: -5px;
+      border: 1.5px solid rgba(168,186,255,0.35);
       border-radius: 50%;
-      transform: rotate(-16deg);
-    }
-
-    .logo span:last-child {
-      background: linear-gradient(90deg, #ffffff 0%, #c5d1ff 48%, #9ddfff 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      transform: rotate(-18deg);
     }
 
     .nav {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 22px;
       flex-wrap: wrap;
     }
 
     .nav a {
       color: var(--muted);
       font-size: 14px;
-      font-weight: 500;
-      transition: 0.2s ease;
+      font-weight: 600;
+      transition: .2s ease;
     }
 
     .nav a:hover {
-      color: #fff;
+      color: white;
     }
 
-    .header-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--primary), #8b7dff);
-      color: #fff;
-      font-weight: 700;
-      font-size: 14px;
-      box-shadow: 0 10px 28px rgba(123, 108, 255, 0.32);
-      transition: transform 0.2s ease;
+    .header-btn,
+    .btn-primary,
+    .btn-secondary,
+    .tariff-btn,
+    .submit-btn {
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
-    .header-cta:hover,
+    .header-btn:hover,
     .btn-primary:hover,
     .btn-secondary:hover,
-    .
-      submit-btn:hover {
+    .tariff-btn:hover,
+    .submit-btn:hover {
       transform: translateY(-2px);
     }
 
+    .header-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), #978bff);
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 14px 34px rgba(124,108,255,0.28);
+    }
+
     .hero {
-      padding: 62px 0 48px;
+      padding: 48px 0 30px;
+    }
+
+    .hero-card {
+      border-radius: 36px;
+      padding: 34px;
+      background:
+        radial-gradient(circle at 70% 22%, rgba(124,108,255,0.18), transparent 23%),
+        radial-gradient(circle at 84% 76%, rgba(89,208,255,0.12), transparent 18%),
+        linear-gradient(180deg, rgba(19,32,59,0.94) 0%, rgba(11,21,39,0.96) 100%);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 34px;
+      align-items: center;
     }
 
-    .hero-card,
-    .glass-card,
-    .feature-card,
-    .program-card,
-    .tariff-card,
-    .proof-card,
-    .form-card,
-    .cta-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-    }
-
-    .hero-main {
-      border-radius: 34px;
-      padding: 38px;
-      min-height: 560px;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 78% 16%, rgba(123,108,255,0.18), transparent 22%),
-        radial-gradient(circle at 88% 80%, rgba(92,208,255,0.12), transparent 18%),
-        linear-gradient(180deg, rgba(18,31,54,0.9) 0%, rgba(12,23,41,0.92) 100%);
-    }
-
-    .hero-main::before {
-      content: "";
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      right: -70px;
-      top: -80px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(123,108,255,0.35), transparent 62%);
-      filter: blur(12px);
-      pointer-events: none;
-    }
-
-    .hero-badge-row {
+    .badges {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .badge {
@@ -232,9 +200,9 @@
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.08);
       background: rgba(255,255,255,0.04);
-      color: #dbe3ff;
+      color: #dce5ff;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .badge-dot {
@@ -242,307 +210,272 @@
       height: 7px;
       border-radius: 50%;
       background: var(--success);
-      box-shadow: 0 0 10px rgba(140,243,201,0.8);
+      box-shadow: 0 0 10px rgba(157,241,202,0.7);
     }
 
     .hero-title {
       margin: 0;
       font-family: "Manrope", sans-serif;
-      font-size: clamp(38px, 6vw, 68px);
+      font-size: clamp(42px, 6vw, 72px);
       line-height: 1.02;
-      letter-spacing: -0.03em;
-      max-width: 780px;
+      letter-spacing: -.04em;
+      max-width: 700px;
     }
 
     .hero-title .accent {
-      background: linear-gradient(90deg, #ffffff 0%, #cfd9ff 44%, #8ee2ff 100%);
+      background: linear-gradient(90deg, #ffffff 0%, #d8e0ff 46%, #8fe3ff 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    .hero-subtitle {
-      margin: 20px 0 0;
-      max-width: 690px;
+    .hero-text {
+      margin: 18px 0 0;
+      max-width: 620px;
       color: var(--muted);
       font-size: 18px;
-      line-height: 1.75;
-    }
-
-    .hero-note {
-      margin-top: 24px;
-      padding: 18px 18px 18px 20px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(255,255,255,0.06);
-      color: #d8e0fb;
-      line-height: 1.7;
-      font-size: 15px;
+      line-height: 1.8;
     }
 
     .hero-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 28px;
+      margin-top: 26px;
     }
 
     .btn-primary,
     .btn-secondary {
-      min-height: 52px;
-      padding: 14px 20px;
-      border-radius: 14px;
-      font-weight: 700;
-      font-size: 15px;
+      min-height: 54px;
+      padding: 14px 22px;
+      border-radius: 15px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: 0.2s ease;
+      font-size: 15px;
+      font-weight: 800;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), #8b7dff);
-      color: #fff;
-      box-shadow: 0 14px 36px rgba(123, 108, 255, 0.35);
+      background: linear-gradient(135deg, var(--primary), #978bff);
+      box-shadow: 0 14px 36px rgba(124,108,255,0.28);
     }
 
     .btn-secondary {
       border: 1px solid rgba(255,255,255,0.1);
       background: rgba(255,255,255,0.035);
-      color: #fff;
     }
 
-    .hero-bottom {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .metric {
-      border-radius: 18px;
-      padding: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .metric-value {
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
-      font-size: 28px;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .metric-text {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .hero-side {
-      display: grid;
-      grid-template-rows: 1fr auto auto;
-      gap: 18px;
-    }
-
-    .
-      secret-card,
-    .career-card,
-    .stack-card {
-      border-radius: 28px;
-      padding: 26px;
-      background:
-        linear-gradient(180deg, rgba(18,31,54,0.95) 0%, rgba(11,22,39,0.92) 100%);
-    }
-
-    .side-label {
-      color: #a9b7db;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 12px;
-    }
-
-    .side-title {
-      font-family: "Manrope", sans-serif;
-      font-size: 26px;
-      font-weight: 800;
-      line-height: 1.15;
-      margin: 0 0 12px;
-    }
-
-    .side-text {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    .stack-list,
-    .check-list {
-      list-style: none;
-      padding: 0;
-      margin: 18px 0 0;
+    .hero-points {
       display: grid;
       gap: 12px;
+      margin-top: 28px;
     }
 
-    .stack-list li,
-    .check-list li {
-      position: relative;
-      padding-left: 18px;
-      color: #d8e0fb;
-      line-height: 1.6;
-      font-size: 15px;
+    .hero-point {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #dfe7ff;
+      font-size: 17px;
+      font-weight: 600;
     }
 
-    .stack-list li::before,
-    .check-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 7px;
-      height: 7px;
+    .hero-point span:first-child {
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--primary-2), var(--primary));
-      box-shadow: 0 0 12px rgba(123,108,255,0.6);
+      box-shadow: 0 0 12px rgba(124,108,255,0.55);
+      flex: 0 0 auto;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 540px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      width: 82%;
+      height: 82%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,108,255,0.28), transparent 58%);
+      filter: blur(20px);
+    }
+
+    .hero-visual img {
+      position: relative;
+      width: 100%;
+      max-width: 620px;
+      filter: drop-shadow(0 0 40px rgba(124,108,255,0.35));
+      animation: floatY 7s ease-in-out infinite;
+    }
+
+    @keyframes floatY {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-14px); }
+      100% { transform: translateY(0px); }
     }
 
     .section {
-      padding: 42px 0;
+      padding: 54px 0;
     }
 
     .section-head {
       display: flex;
-      align-items: flex-end;
+      align-items: end;
       justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 24px;
+      gap: 22px;
+      margin-bottom: 26px;
     }
 
     .section-kicker {
       display: inline-block;
       margin-bottom: 10px;
-      color: #9fb2de;
+      color: #a4b6e3;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
     }
 
     .section-title {
       margin: 0;
       font-family: "Manrope", sans-serif;
-      font-size: clamp(30px, 4vw, 46px);
+      font-size: clamp(30px, 4vw, 48px);
       line-height: 1.05;
-      letter-spacing: -0.03em;
+      letter-spacing: -.03em;
+      max-width: 760px;
     }
 
-    .section-text {
-      max-width: 720px;
+    .
+    section-text {
+      max-width: 620px;
+      margin: 0;
       color: var(--muted);
       line-height: 1.8;
       font-size: 17px;
-      margin: 0;
     }
 
-    .grid-3,
-    .grid-2 {
+    .soft-grid {
       display: grid;
-      gap: 18px;
-    }
-
-    .grid-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 6px;
     }
 
-    .grid-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .feature-card,
-    .program-card,
-    .proof-card {
-      border-radius: 24px;
+    .soft-card {
+      border-radius: 28px;
       padding: 26px;
-      min-height: 220px;
+      min-height: 230px;
+      background:
+        linear-gradient(180deg, rgba(18,31,58,0.9) 0%, rgba(13,24,45,0.92) 100%);
     }
 
-    .feature-icon,
-    .program-icon,
-    .proof-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
+    .soft-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
-      font-size: 18px;
       margin-bottom: 18px;
-      background: linear-gradient(135deg, rgba(123,108,255,0.24), rgba(92,208,255,0.18));
+      background: linear-gradient(135deg, rgba(124,108,255,0.24), rgba(89,208,255,0.18));
       border: 1px solid rgba(255,255,255,0.08);
-      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
     }
 
     .card-title {
       margin: 0 0 12px;
       font-family: "Manrope", sans-serif;
       font-size: 24px;
-      line-height: 1.15;
+      line-height: 1.14;
     }
 
     .card-text {
       margin: 0;
       color: var(--muted);
-      line-height: 1.75;
       font-size: 15px;
+      line-height: 1.75;
     }
 
+    .why-grid,
+    .program-grid,
+    .quotes-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .why-grid,
+    .program-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .why-card,
+    .program-card,
+    .quote-card {
+      border-radius: 24px;
+      padding: 26px;
+      min-height: 220px;
+    }
+
+    .why-card,
     .program-card {
-      min-height: 250px;
       background:
-        linear-gradient(180deg, rgba(18,31,54,0.95) 0%, rgba(11,22,39,0.92) 100%);
+        linear-gradient(180deg, rgba(18,31,58,0.92) 0%, rgba(12,23,43,0.96) 100%);
     }
 
-    .program-step {
+    .small-label {
       display: inline-block;
       margin-bottom: 14px;
-      color: #abc0f5;
+      color: #aebceb;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
     }
 
-    .tariffs-wrap {
+    .tariff-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 26px;
+    }
+
+    .tariff-intro {
+      padding-top: 8px;
+    }
+
+    .tariff-cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-      align-items: stretch;
+      gap: 18px;
     }
 
     .tariff-card {
       border-radius: 28px;
       padding: 28px;
+      min-height: 100%;
       display: flex;
       flex-direction: column;
-      min-height: 100%;
-      background:
-        linear-gradient(180deg, rgba(18,31,54,0.95) 0%, rgba(11,22,39,0.92) 100%);
       position: relative;
-      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(18,31,58,0.94) 0%, rgba(11,21,39,0.96) 100%);
     }
 
     .tariff-card.featured {
-      border-color: rgba(123,108,255,0.32);
+      border: 1px solid rgba(124,108,255,0.34);
       box-shadow:
-        0 22px 60px rgba(0,0,0,0.38),
-          0 0 0 1px rgba(123,108,255,0.1),
-        0 0 36px rgba(123,108,255,0.14);
+        0 22px 60px rgba(0,0,0,0.36),
+        0 0 0 1px rgba(124,108,255,0.10),
+        0 0 34px rgba(124,108,255,0.12);
       transform: translateY(-4px);
     }
 
@@ -553,52 +486,54 @@
       right: 18px;
       min-height: 34px;
       padding: 8px 12px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       border-radius: 999px;
-      background: rgba(123,108,255,0.16);
-      border: 1px solid rgba(123,108,255,0.28);
-      color: #d9d3ff;
+      background: rgba(124,108,255,0.16);
+      border: 1px solid rgba(124,108,255,0.26);
+      color: #ded8ff;
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: 0.04em;
       text-transform: uppercase;
-    }
-
-    .tariff-top {
-      margin-bottom: 18px;
+      letter-spacing: .04em;
+      display: inline-flex;
+      align-items: center;
     }
 
     .tariff-name {
       margin: 0;
       font-family: "Manrope", sans-serif;
-      font-size: 28px;
-      line-height: 1.1;
+      font-size: 30px;
+      line-height: 1.08;
     }
 
     .tariff-tag {
-      display: inline-block;
       margin-top: 8px;
-      color: #a5b4d8;
+      color: #a8b6db;
       font-size: 14px;
       font-weight: 600;
     }
 
     .tariff-price {
-      margin: 20px 0 6px;
+      margin: 18px 0 10px;
       font-family: "Manrope", sans-serif;
-      font-size: 42px;
+      font-size: 44px;
       font-weight: 800;
       line-height: 1;
-      letter-spacing: -0.03em;
+      letter-spacing: -.03em;
     }
 
     .tariff-price small {
       font-size: 15px;
-      color: var(--muted-2);
       font-weight: 700;
+      color: var(--muted-2);
       letter-spacing: 0;
+    }
+
+    .tariff-price-old {
+      font-size: 25px;
+      font-weight: 700;
+      opacity: .45;
+      text-decoration: line-through;
+      margin-right: 10px;
     }
 
     .tariff-desc {
@@ -619,9 +554,9 @@
     .tariff-list li {
       position: relative;
       padding-left: 22px;
-      color: #dbe4ff;
-      line-height: 1.65;
+      color: #dde5ff;
       font-size: 15px;
+      line-height: 1.66;
     }
 
     .tariff-list li::before {
@@ -638,91 +573,132 @@
       padding-top: 22px;
     }
 
-    .tariff-button {
+    .tariff-btn {
       width: 100%;
-      min-height: 50px;
-      border-radius: 14px;
+      min-height: 52px;
+      border-radius: 15px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
       font-size: 15px;
-      background: linear-gradient(135deg, var(--primary), #8a7dff);
-      color: white;
-      box-shadow: 0 14px 36px rgba(123, 108, 255, 0.28);
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), #978bff);
+      box-shadow: 0 14px 36px rgba(124,108,255,0.24);
     }
 
-    .tariff-button.secondary {
+    .tariff-btn.secondary {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: none;
     }
 
-    .proof-card {
-      min-height: 210px;
+    .quotes-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .quote {
-      margin: 0;
+    .quote-card {
+      min-height: 230px;
+      background:
+        linear-gradient(180deg, rgba(18,31,58,0.92) 0%, rgba(11,22,41,0.96) 100%);
+    }
+
+    .quote-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(124,108,255,0.24), rgba(89,208,255,0.18));
+      border: 1px solid rgba(255,255,255,0.08);
       font-size: 18px;
-      line-height: 1.8;
-      color: #dce4ff;
     }
 
-    .muted-strong {
-      color: #e8eeff;
-      font-weight: 700;
+    .quote-text {
+      margin: 0;
+      color: #e4ebff;
+      font-size: 18px;
+      line-height: 1.82;
+      font-weight: 600;
     }
 
     .cta-card {
-      border-radius: 30px;
+      border-radius: 32px;
       padding: 34px;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 22px;
-      align-items: center;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
       background:
-        radial-gradient(circle at 85% 20%, rgba(123,108,255,0.18), transparent 24%),
-        linear-gradient(180deg, rgba(18,31,54,0.95) 0%, rgba(11,22,39,0.92) 100%);
+        radial-gradient(circle at 85% 18%, rgba(124,108,255,0.18), transparent 22%),
+        linear-gradient(180deg, rgba(18,31,58,0.94) 0%, rgba(11,21,39,0.96) 100%);
     }
 
     .cta-title {
       margin: 0 0 12px;
       font-family: "Manrope", sans-serif;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.06;
+      letter-spacing: -.03em;
     }
 
     .cta-text {
       margin: 0;
       color: var(--muted);
-      line-height: 1.75;
       font-size: 16px;
-      max-width: 620px;
+      line-height: 1.8;
+      max-width: 640px;
+    }
+
+    .bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 18px;
+      color: #dfe7ff;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .bullet-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-2), var(--primary));
     }
 
     .form-card {
-      border-radius: 30px;
-      padding: 32px;
+      border-radius: 32px;
+      padding: 34px;
       background:
-        linear-gradient(180deg, rgba(18,31,54,0.95) 0%, rgba(11,22,39,0.92) 100%);
+        radial-gradient(circle at 80% 12%, rgba(124,108,255,0.14), transparent 20%),
+        linear-gradient(180deg, rgba(18,31,58,0.94) 0%, rgba(11,21,39,0.96) 100%);
     }
 
     .form-title {
       margin: 0 0 12px;
       font-family: "Manrope", sans-serif;
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.06;
+      letter-spacing: -.03em;
     }
 
     .form-text {
       margin: 0 0 22px;
       color: var(--muted);
-      line-height: 1.75;
       font-size: 16px;
-      max-width: 700px;
+      line-height: 1.8;
+      max-width: 760px;
     }
 
     .form-grid {
@@ -734,7 +710,7 @@
     .field {
       display: flex;
       flex-direction: column;
-        gap: 8px;
+      gap: 8px;
     }
 
     .field.full {
@@ -742,9 +718,9 @@
     }
 
     label {
+      color: #e0e8ff;
       font-size: 14px;
-      color: #dce5ff;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     input,
@@ -752,72 +728,70 @@
     textarea {
       width: 100%;
       min-height: 54px;
+      border-radius: 15px;
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
       background: rgba(255,255,255,0.03);
       color: white;
       padding: 14px 16px;
       outline: none;
       font: inherit;
-      transition: border-color 0.2s ease, background 0.2s ease;
-    }
+      }
 
     textarea {
-      min-height: 130px;
+      min-height: 132px;
       resize: vertical;
       padding-top: 14px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #8090b5;
     }
 
     input:focus,
     select:focus,
     textarea:focus {
-      border-color: rgba(123,108,255,0.45);
+      border-color: rgba(124,108,255,0.4);
       background: rgba(255,255,255,0.05);
     }
 
-    input::placeholder,
-    textarea::placeholder {
-      color: #7f90b8;
-    }
-
     .form-bottom {
+      margin-top: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
       flex-wrap: wrap;
-      margin-top: 20px;
     }
 
     .form-note {
       max-width: 650px;
       color: var(--muted-2);
       font-size: 13px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .submit-btn {
-      min-width: 240px;
+      min-width: 250px;
       min-height: 54px;
       border: 0;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--primary), #8b7dff);
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--primary), #978bff);
+      box-shadow: 0 14px 36px rgba(124,108,255,0.28);
       color: white;
-      font-weight: 800;
       font-size: 15px;
+      font-weight: 800;
       cursor: pointer;
-      box-shadow: 0 14px 36px rgba(123, 108, 255, 0.32);
-      transition: transform 0.2s ease;
     }
 
     .footer {
-      padding: 28px 0 40px;
-      color: #8897bc;
+      padding: 28px 0 42px;
+      color: #8d9cc0;
       font-size: 14px;
     }
 
     .footer-inner {
-      padding-top: 18px;
+      padding-top: 16px;
       border-top: 1px solid rgba(255,255,255,0.06);
       display: flex;
       justify-content: space-between;
@@ -825,19 +799,16 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 1100px) {
-      .hero-grid,
+    @media (max-width: 1140px) {
+      .soft-grid,
+      .why-grid,
+      .program-grid,
+      .quotes-grid,
+      .tariff-layout,
+      .tariff-cards,
       .cta-card,
-      .tariffs-wrap {
+      .form-grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero-main {
-        min-height: auto;
-      }
-
-      .hero-side {
-        grid-template-rows: auto;
       }
 
       .tariff-card.featured {
@@ -846,69 +817,49 @@
     }
 
     @media (max-width: 900px) {
-      .grid-3,
-      .grid-2,
-      .hero-bottom,
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
       .section-head {
-        align-items: flex-start;
         flex-direction: column;
-      }
-
-      .nav {
-        display: none;
+        align-items: start;
       }
     }
 
-    @media (max-width: 640px) {
-      .header-inner {
-        min-height: 72px;
-      }
-
-      .hero {
-        padding-top: 34px;
-      }
-
-      .hero-main,
-      .secret-card,
-      .career-card,
-      .stack-card,
-      .feature-card,
-      .program-card,
-      .tariff-card,
-      .proof-card,
-      .cta-card,
-      .form-card {
-        padding: 22px;
-        border-radius: 22px;
-      }
-
+    @media (max-width: 760px) {
+      .hero-grid,
+      .nav,
       .hero-actions,
       .form-bottom {
-        flex-direction: column;
-        align-items: stretch;
+        display: block;
       }
 
-      .submit-btn,
+      .nav {
+        margin: 16px 0 0;
+      }
+
+      .hero-visual {
+        margin-top: 30px;
+        min-height: auto;
+      }
+
       .btn-primary,
-      .btn-secondary {
+      .btn-secondary,
+      .submit-btn,
+      .header-btn {
         width: 100%;
+        margin-top: 10px;
       }
     }
   </style>
 </head>
 <body>
+
   <header class="header">
     <div class="container header-inner">
-      <a href="#" class="logo" aria-label="Qalaxy">
+      <a href="#" class="logo">
         <span class="logo-mark" aria-hidden="true"></span>
         <span>Qalaxy</span>
       </a>
 
-      <nav class="nav" aria-label="Основна навігація">
+      <nav class="nav">
         <a href="#about">Про Школу</a>
         <a href="#program">Програма</a>
         <a href="#tariffs">Тарифи</a>
@@ -916,125 +867,89 @@
         <a href="#apply">Заявка</a>
       </nav>
 
-      <a class="header-cta" href="#apply">Залишити Заявку</a>
+      <a class="header-btn" href="#apply">Залишити Заявку</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-main hero-card">
-          <div class="hero-badge-row">
-            <div class="badge"><span class="badge-dot"></span> Automation QA School</div>
-            <div class="badge">Навчання З Нуля</div>
-            <div class="badge">Реальні Кейси</div>
-          </div>
+      <div class="container">
+        <div class="hero-card glass">
+          <div class="hero-grid">
+            <div>
+              <div class="badges">
+                <div class="badge"><span class="badge-dot"></span> Automation QA School</div>
+                <div class="badge">Навчання З Нуля</div>
+                <div class="badge">Реальні Кейси</div>
+              </div>
 
-          <h1 class="hero-title">
-              Qalaxy — не просто курс, а <span class="accent">система входу в Automation QA</span>
-          </h1>
+              <h1 class="hero-title">
+                Qalaxy — не просто курс, а <span class="accent">система сильного входу в Automation QA</span>
+              </h1>
 
-          <p class="hero-subtitle">
-            Є те, про що майже не говорять у більшості програм: сильного Automation QA відрізняє не лише знання інструментів, а здатність бачити ризики, мислити глибше за чек-лист і звучати впевнено на співбесіді. Саме цю базу ми будуємо в Qalaxy.
-          </p>
+              <p class="hero-text">
+                Побудована так, щоб не просто дати знання, а поступово провести від нуля до рівня, на якому ти починаєш впевненіше звучати на технічних співбесідах, краще розуміти логіку QA і бачити реальні задачі значно глибше.
+              </p>
 
-          <div class="hero-note">
-            Тут не про «подивився урок — і забув». Тут про шлях, на якому теорія переходить у практику, практика — у впевненість, а впевненість — у готовність до реальних задач, технічних розмов і перших сильних кар’єрних кроків.
-          </div>
+              <div class="hero-actions">
+                <a class="btn-primary" href="#apply">Почати З Qalaxy</a>
+                <a class="btn-secondary" href="#tariffs">Подивитися Тарифи</a>
+              </div>
 
-          <div class="hero-actions">
-            <a class="btn-primary" href="#apply">Почати З Qalaxy</a>
-            <a class="btn-secondary" href="#tariffs">Подивитися Тарифи</a>
-          </div>
+              <div class="hero-points">
+                <div class="hero-point"><span></span><span>12 Тижнів Навчання</span></div>
+                <div class="hero-point"><span></span><span>Навички UI + API Automation</span></div>
+                <div class="hero-point"><span></span><span>Кар’єрна Підготовка</span></div>
+              </div>
+              </div>
 
-          <div class="hero-bottom">
-            <div class="metric">
-              <div class="metric-value">3 Місяці</div>
-              <div class="metric-text">сильного структурованого навчання без хаосу та інформаційного шуму</div>
+            <div class="hero-visual">
+              <img src="hero-qa.png" alt="Qalaxy Automation QA Illustration">
             </div>
-            <div class="metric">
-              <div class="metric-value">UI + API</div>
-              <div class="metric-text">ключові напрями автоматизації, які формують справжню прикладну базу</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">QA Mindset</div>
-              <div class="metric-text">фокус не лише на інструментах, а на мисленні, яке високо цінується в командах</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-side">
-          <div class="secret-card glass-card">
-            <div class="side-label">Секрет Професії</div>
-            <h2 class="side-title">Сильний QA не просто перевіряє — він бачить те, що інші пропускають</h2>
-            <p class="side-text">
-              Саме тому ми навчаємо не механічному виконанню кроків, а логіці перевірок, архітектурі автотестів, умінню задавати правильні питання й аргументовано пояснювати свої рішення.
-            </p>
-          </div>
-
-          <div class="career-card glass-card" id="career">
-            <div class="side-label">Кар’єрний Трек</div>
-            <h3 class="side-title">Навчання, яке дивиться далі за модулі та домашні завдання</h3>
-            <ul class="check-list">
-              <li>Підготовка до технічних співбесід на основі реальних сценаріїв.</li>
-              <li>Доступ до записів справжніх співбесід для кращого розуміння очікувань ринку.</li>
-              <li>Підтримка на етапі переходу від навчання до першого сильного професійного кроку.</li>
-            </ul>
-          </div>
-
-          <div class="stack-card glass-card">
-            <div class="side-label">На Чому Будується База</div>
-            <ul class="stack-list">
-              <li>Тестування, логіка QA та вміння бачити ризики.</li>
-              <li>Робота з UI Automation і API Automation.</li>
-              <li>Практичні завдання, наближені до реального проєктного середовища.</li>
-              <li>Системна підготовка до технічної комунікації та співбесід.</li>
-            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="section" id="career">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-kicker">Що Робить Qalaxy Інакшим</div>
-            <h2 class="section-title">Не просто навчання, а середовище, де формується справжня професійна опора</h2>
+            <div class="section-kicker">Сильні Сторони Qalaxy</div>
+            <h2 class="section-title">Те, що формує глибину підходу, а не просто зовнішню упаковку</h2>
           </div>
           <p class="section-text">
-            У багатьох курсах дають інформацію. У Qalaxy ми збираємо систему: від фундаменту тестування й технічної логіки — до практики, мислення Automation QA Engineer і підготовки до реальних розмов з компаніями.
+            Ми винесли ці сенси нижче головного екрану, щоб спочатку ти бачив основний офер, а далі — глибину: професійне мислення, кар’єрний фокус і технічну базу, на якій будується впевненість у професії.
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="feature-card glass-card">
-            <div class="feature-icon">01</div>
-            <h3 class="card-title">Практика, а не декоративна теорія</h3>
+        <div class="soft-grid">
+          <article class="soft-card glass">
+            <div class="soft-icon">✦</div>
+            <h3 class="card-title">Секрет Професії</h3>
             <p class="card-text">
-                Кожен блок має працювати на навичку. Не просто «знати», а вміти пояснити, застосувати, перевірити, автоматизувати й захистити своє рішення.
+              Сильний QA не просто виконує перевірки. Він бачить слабкі місця, ставить точні запитання, мислить глибше за чек-лист і вміє аргументовано пояснювати свої рішення.
             </p>
           </article>
 
-          <article class="feature-card glass-card">
-            <div class="feature-icon">02</div>
-            <h3 class="card-title">Мислення сильного QA</h3>
+          <article class="soft-card glass">
+            <div class="soft-icon">✦</div>
+            <h3 class="card-title">Кар’єрний Трек</h3>
             <p class="card-text">
-              Найцінніше в професії — не набір кнопок і команд, а здатність бачити сценарії, формулювати ризики, ставити точні запитання й будувати якісні перевірки.
+              Ми дивимося не лише на проходження програми, а й на те, як людина звучить на співбесідах, як розбирає сценарії та наскільки впевнено переходить до першого сильного професійного шансу.
             </p>
           </article>
 
-          <article class="feature-card glass-card">
-            <div class="feature-icon">03</div>
-            <h3 class="card-title">Фокус на реальному вході в професію</h3>
+          <article class="soft-card glass">
+            <div class="soft-icon">✦</div>
+            <h3 class="card-title">На Чому Будується База</h3>
             <p class="card-text">
-              Ми дивимося не лише на процес навчання, а й на те, як людина звучить на співбесіді, як розбирає задачі та наскільки впевнено рухається до свого першого сильного шансу.
+              Фундамент тестування, логіка QA, UI Automation, API Automation, практичні завдання, технічне мислення й поступове розуміння того, як виглядає реальний проєктний підхід.
             </p>
           </article>
         </div>
       </div>
     </section>
-
     <section class="section" id="program">
       <div class="container">
         <div class="section-head">
@@ -1043,56 +958,92 @@
             <h2 class="section-title">Маршрут, який поступово переводить від нуля до впевненої прикладної бази</h2>
           </div>
           <p class="section-text">
-            Програма побудована так, щоб людина не губилася в темах, а рухалася логічно: від ролі QA і фундаменту тестування — до практики автоматизації, технічної комунікації й кар’єрного етапу.
+            Програма побудована так, щоб людина не губилася в темах, а рухалася логічно: від ролі QA й фундаменту тестування — до автоматизації, технічної комунікації та впевненого кар’єрного етапу.
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="program-card glass-card">
-            <span class="program-step">Модуль 01</span>
+        <div class="program-grid">
+          <article class="program-card glass">
+            <div class="small-label">Модуль 01</div>
             <h3 class="card-title">Фундамент Тестування</h3>
             <p class="card-text">
-              Роль QA, типи тестування, рівні перевірок, тестова документація, дефекти, логіка тест-дизайну й базові принципи якості.
+              Роль QA, типи тестування, рівні перевірок, тестова документація, дефекти, логіка тест-дизайну, якість продукту та командна взаємодія.
             </p>
           </article>
 
-          <article class="program-card glass-card">
-            <span class="program-step">Модуль 02</span>
+          <article class="program-card glass">
+            <div class="small-label">Модуль 02</div>
             <h3 class="card-title">Технічна База</h3>
             <p class="card-text">
-              Розуміння технічного середовища, робочого підходу, структури автоматизації, логіки коду й того, як мислити системно, а не фрагментами.
+              Робота з технічним середовищем, базова логіка коду, структура автоматизації, змінні, умови, цикли, функції, робота з даними та розуміння того, як мислити системно.
             </p>
           </article>
 
-          <article class="program-card glass-card">
-            <span class="program-step">Модуль 03</span>
+          <article class="program-card glass">
+            <div class="small-label">Модуль 03</div>
             <h3 class="card-title">API Automation</h3>
             <p class="card-text">
-              Запити, відповіді, статус-коди, JSON, перевірки, помилки, зв’язки між системами та практичний підхід до API як до важливої частини продукту.
+              Запити, відповіді, статус-коди, JSON, перевірки, авторизація, помилки, зв’язки між системами та практичний підхід до API як до важливої частини продукту.
             </p>
           </article>
 
-          <article class="program-card glass-card">
-            <span class="program-step">Модуль 04</span>
+          <article class="program-card glass">
+            <div class="small-label">Модуль 04</div>
             <h3 class="card-title">UI Automation</h3>
             <p class="card-text">
-              Локатори, логіка стабільних перевірок, побудова сценаріїв, читабельність автотестів, робота зі структурою сторінок і компонентів.
+              Локатори, логіка стабільних перевірок, побудова сценаріїв, читабельність автотестів, робота зі структурою сторінок і компонентів, Page Object та базова архітектура.
             </p>
           </article>
 
-          <article class="program-card glass-card">
-            <span class="program-step">Модуль 05</span>
+          <article class="program-card glass">
+            <div class="small-label">Модуль 05</div>
             <h3 class="card-title">Проєктне Мислення</h3>
             <p class="card-text">
-              Як думати не окремими тестами, а системою: ризики, архітектура, якість рішень, командна логіка й розуміння того, як виглядає реальний проєкт.
+              Як думати не окремими тестами, а системою: ризики, архітектура, якість рішень, командна логіка, баг-репорти, аналіз проблем і розуміння того, як виглядає реальний проєкт.
             </p>
           </article>
 
-          <article class="program-card glass-card">
-            <span class="program-step">Модуль 06</span>
+          <article class="program-card glass">
+            <div class="small-label">Модуль 06</div>
             <h3 class="card-title">Співбесіди Та Кар’єрний Етап</h3>
             <p class="card-text">
-              Робота з відповідями, записами реальних співбесід, формування технічної впевненості та підготовка до наступного професійного кроку.
+              Робота з відповідями, записами реальних співбесід, формування технічної впевненості, підготовка до технічної розмови та наступного професійного кроку.
+            </p>
+          </article>
+        </div>
+
+        <div class="section-head" style="margin-top: 54px;">
+          <div>
+            <div class="section-kicker">Інструменти Та Програми</div>
+            <h2 class="section-title">Ти будеш працювати не з абстракцією, а з реальним технічним стеком</h2>
+          </div>
+          <p class="section-text">
+            Ми не обмежуємося загальними словами про професію. Під час навчання ти познайомишся з конкретними інструментами, які реально використовуються в роботі Automation QA Engineer.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <article class="why-card glass">
+            <div class="small-label">Для Коду Та Автоматизації</div>
+            <h3 class="card-title">Основне Робоче Середовище</h3>
+            <p class="card-text">
+              Visual Studio Code, Playwright, Node.js, npm, JavaScript / TypeScript, структура автотестів, робота з файлами проєкту, запуск тестів, звіти та базова архітектура автоматизації.
+            </p>
+          </article>
+
+          <article class="why-card glass">
+            <div class="small-label">Для API Та Запитів</div>
+            <h3 class="card-title">Практика Роботи З API</h3>
+            <p class="card-text">
+              Postman, Swagger / OpenAPI, JSON, HTTP-методи, статус-коди, headers, body, параметри, токени, авторизація, перевірка відповідей і побудова логіки API-тестів.
+            </p>
+          </article>
+
+          <article class="why-card glass">
+            <div class="small-label">Для Реальної Роботи</div>
+            <h3 class="card-title">Проєктний Та Командний Стек</h3>
+            <p class="card-text">
+              Git, GitHub, Chrome DevTools, робота з консоллю браузера, network, elements, аналіз помилок, базові SQL-запити, читання логів, баг-репорти, чек-листи та тест-кейси.
             </p>
           </article>
         </div>
@@ -1100,9 +1051,9 @@
     </section>
 
     <section class="section" id="tariffs">
-        <div class="container">
-        <div class="section-head">
-          <div>
+      <div class="container">
+        <div class="tariff-layout">
+          <div class="tariff-intro">
             <div class="section-kicker">Тарифи Навчання</div>
             <h2 class="section-title">Формати, які відповідають різним цілям, темпу та рівню підтримки</h2>
           </div>
@@ -1111,41 +1062,48 @@
           </p>
         </div>
 
-        <div class="tariffs-wrap">
-          <article class="tariff-card glass-card">
-            <div class="tariff-top">
+        <div class="tariff-cards">
+          <article class="tariff-card glass">
+            <div>
               <h3 class="tariff-name">Base</h3>
               <div class="tariff-tag">Для самостійного старту</div>
-              <div class="tariff-price">349$</div>
+              <div class="tariff-price">250$</div>
               <div class="tariff-desc">
-                Формат для тих, хто хоче отримати структуровану базу, рухатися у власному темпі та самостійно вибудовувати свою технічну опору.
+                Формат для тих, хто хоче навчатися самостійно, але не втрачати якість, структуру та практичну цінність програми.
               </div>
             </div>
 
             <ul class="tariff-list">
-              <li>Доступ до навчальних матеріалів і модулів програми.</li>
-              <li>Сильний фундамент з Automation QA без хаотичного пошуку інформації.</li>
-              <li>Маршрут, який допомагає зрозуміти, що і в якій послідовності вивчати.</li>
-              <li>Опора для тих, хто хоче почати впевнено й системно.</li>
-              <li>Можливість повертатися до матеріалів у зручному темпі.</li>
+              <li>Повний доступ до програми на 12 тижнів.</li>
+              <li>Самостійне проходження курсу у власному темпі.</li>
+              <li>Реальні практичні завдання для закріплення матеріалу.</li>
+              <li>Структурований маршрут навчання без хаотичного пошуку інформації.</li>
+              <li>Список рекомендованої літератури для глибшого розуміння професії.</li>
+              <li>Посилання на додаткові навчальні відео та корисні матеріали.</li>
+              <li>Сильна база з Automation QA без хаотичного пошуку інформації.</li>
             </ul>
 
             <div class="tariff-bottom">
-              <a href="#apply" class="tariff-button secondary">Обрати Base</a>
+              <a href="#apply" class="tariff-btn secondary">Обрати Base</a>
             </div>
           </article>
 
-          <article class="tariff-card glass-card featured">
-            <div class="tariff-top">
+          <article class="tariff-card glass featured">
+            <div>
               <h3 class="tariff-name">Pro</h3>
               <div class="tariff-tag">Оптимальний баланс навчання та підтримки</div>
-              <div class="tariff-price">699$</div>
+              <div class="tariff-price">
+                <span class="tariff-price-old">699$</span>549$
+              </div>
               <div class="tariff-desc">
-                Формат для тих, хто хоче не просто дивитися матеріали, а проходити шлях із практикою, перевіркою, фідбеком і більш глибоким зануренням у професійне мислення QA.
+                Ціна за повну програму тривалістю 12 тижнів. Формат для тих, хто хоче навчатися в ритмі групи, отримувати практику, перевірку, фідбек і системний супровід протягом усього курсу.
               </div>
             </div>
 
             <ul class="tariff-list">
+              <li>Ціна за повну програму тривалістю 12 тижнів.</li>
+              <li>3 лекції на тиждень у вечірній час.</li>
+              <li>Можливість переглянути запис кожного заняття.</li>
               <li>Повна програма навчання з покроковою системою проходження.</li>
               <li>Практичні домашні завдання після ключових модулів.</li>
               <li>Завдання та навчальні активності в Telegram-Боті.</li>
@@ -1153,40 +1111,41 @@
               <li>Розбір типових помилок і слабких місць у логіці перевірок.</li>
               <li>Підготовка до технічних співбесід.</li>
               <li>Робота не лише з інструментами, а з мисленням Automation QA Engineer.</li>
-              <li>Матеріали, які допомагають перейти від теорії до прикладної впевненості.</li>
             </ul>
 
             <div class="tariff-bottom">
-              <a href="#apply" class="tariff-button">Обрати Pro</a>
+              <a href="#apply" class="tariff-btn">Обрати Pro</a>
             </div>
           </article>
 
-          <article class="tariff-card glass-card">
-            <div class="tariff-top">
+          <article class="tariff-card glass">
+            <div>
               <h3 class="tariff-name">Career Start</h3>
               <div class="tariff-tag">Поглиблений формат із довгим супроводом</div>
               <div class="tariff-price">0$ <small>на старті</small></div>
               <div class="tariff-desc">
-                Формат для тих, хто хоче зайти в навчання без стартового платежу, отримати максимум включення, довгий супровід і фокус не лише на проходженні курсу, а й на сильному виході до кар’єрного етапу.
+                Ціна за повну програму тривалістю 12 тижнів без оплати на старті. Формат для тих, хто хоче отримати максимум включення, довгий супровід і фокус не лише на проходженні курсу, а й на сильному виході до кар’єрного етапу.
               </div>
             </div>
 
             <ul class="tariff-list">
+              <li>Ціна за повну програму тривалістю 12 тижнів без оплати на старті.</li>
+              <li>3 лекції на тиждень у вечірній час.</li>
+              <li>Можливість переглянути запис кожного заняття.</li>
               <li>Оплата не на старті, а після позитивного кар’єрного результату.</li>
               <li>Жодних витрат під час навчання.</li>
               <li>Повна програма навчання з покроковою системою проходження.</li>
               <li>Практичні домашні завдання після модулів.</li>
               <li>Завдання та навчальні активності в Telegram-Боті.</li>
               <li>Глибокий розбір робіт і детальний зворотний зв’язок.</li>
-              <li>Доступ до реальних записів співбесід, щоб краще відчути очікування ринку.</li>
-              <li>Підготовка до технічних співбесід і посилення впевненості у відповідях.</li>
+              <li>Доступ до реальних записів співбесід.</li>
               <li>Супровід протягом 6 місяців і підтримка на етапі входу в професію.</li>
               <li>Допомога в адаптації до робочих процесів та перших професійних кроків.</li>
               <li>Фінансова модель партнерства: 20% від доходу протягом 6 місяців після працевлаштування.</li>
             </ul>
 
             <div class="tariff-bottom">
-              <a href="#apply" class="tariff-button secondary">Обрати Career Start</a>
+              <a href="#apply" class="tariff-btn secondary">Обрати Career Start</a>
             </div>
           </article>
         </div>
@@ -1194,33 +1153,35 @@
     </section>
 
     <section class="section">
-      <div class="container grid-3">
-        <article class="proof-card glass-card">
-          <div class="proof-icon">✦</div>
-          <p class="quote">
-            «У Qalaxy важливо не лише дати людині знання, а довести її до стану, коли вона починає <span class="muted-strong">звучати сильніше, мислити точніше й бачити професію глибше</span>. Саме там починається справжній ріст».
-          </p>
-        </article>
+      <div class="container">
+        <div class="quotes-grid">
+          <article class="quote-card glass">
+            <div class="quote-icon">✦</div>
+            <p class="quote-text">
+              «У Qalaxy важливо не лише дати людині знання, а довести її до стану, коли вона починає звучати сильніше, мислити точніше й бачити професію глибше».
+            </p>
+          </article>
 
-        <article class="proof-card glass-card">
-          <div class="proof-icon">✦</div>
-          <p class="quote">
-            «Майже всі говорять про інструменти. Значно менше говорять про те, що компанії дуже добре відчувають, коли кандидат <span class="muted-strong">мислить як QA, а коли лише повторює завчені фрази</span>».
-          </p>
-        </article>
+          <article class="quote-card glass">
+            <div class="quote-icon">✦</div>
+            <p class="quote-text">
+              «Майже всі говорять про інструменти. Значно менше говорять про те, що компанії дуже добре відчувають, коли кандидат мислить як QA, а коли лише повторює завчені фрази».
+            </p>
+          </article>
 
-        <article class="proof-card glass-card">
-          <div class="proof-icon">✦</div>
-          <p class="quote">
-            «Сильний старт у професії починається не з обіцянок, а з правильно зібраної бази, якісної практики та середовища, де тебе <span class="muted-strong">ведуть до реальної готовності</span>».
-          </p>
-        </article>
+          <article class="quote-card glass">
+            <div class="quote-icon">✦</div>
+            <p class="quote-text">
+              «Сильний старт у професії починається не з обіцянок, а з правильно зібраної бази, якісної практики та середовища, де тебе ведуть до реальної готовності».
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="cta-card glass-card">
+        <div class="cta-card glass">
           <div>
             <div class="section-kicker">Для Тих, Хто Готовий Серйозно</div>
             <h2 class="cta-title">Qalaxy — це не просто ще один курс. Це середовище, у якому твій ріст стає керованим</h2>
@@ -1230,7 +1191,7 @@
           </div>
 
           <div>
-            <ul class="check-list">
+            <ul class="bullet-list">
               <li>Структура, яка знімає хаос і перевантаження.</li>
               <li>Практика, яка працює на навичку, а не на ілюзію прогресу.</li>
               <li>Кар’єрний фокус, який відчувається не в словах, а в підході.</li>
@@ -1239,12 +1200,11 @@
         </div>
       </div>
     </section>
-
     <section class="section" id="apply">
       <div class="container">
-        <div class="form-card glass-card">
+        <div class="form-card glass">
           <div class="section-kicker">Заявка</div>
-          <h2 class="form-title">Залиш заявку до Qalaxy</h2>
+          <h2 class="form-title">Залиш Заявку До Qalaxy</h2>
           <p class="form-text">
             Заповни форму, щоб отримати деталі щодо навчання, форматів участі та наступного набору. Далі ми зможемо зрозуміти, який маршрут підійде тобі найкраще.
           </p>
@@ -1277,7 +1237,7 @@
               </div>
 
               <div class="field full">
-                <label for="comment">Коротко про себе</label>
+                <label for="comment">Коротко Про Себе</label>
                 <textarea id="comment" name="comment" placeholder="За бажанням: кілька слів про твій поточний рівень або ціль"></textarea>
               </div>
             </div>
